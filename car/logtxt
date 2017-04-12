@@ -1,0 +1,30 @@
+[2017/01/06 20:51:04 tb1_taguchi_shoichi@ip-172-20-212-46 code]$ python modified_read_test.py 
+Traceback (most recent call last):
+  File "modified_read_test.py", line 752, in <module>
+    res = main()
+  File "modified_read_test.py", line 749, in main
+    fnc.merge_shashu_to_base()
+  File "modified_read_test.py", line 671, in merge_shashu_to_base
+    self.make_catalogue()
+  File "modified_read_test.py", line 659, in make_catalogue
+    self.a12.to_csv("/home/tb1_taguchi_shoichi/py35_work/data/catalogue/test/car_catalogue_ss-*.csv")
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/dataframe/core.py", line 938, in to_csv
+    return to_csv(self, filename, **kwargs)
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/dataframe/io/csv.py", line 413, in to_csv
+    compute(*values, get=get)
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/base.py", line 179, in compute
+    results = get(dsk, keys, **kwargs)
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/threaded.py", line 76, in get
+    **kwargs)
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/async.py", line 493, in get_async
+    raise(remote_exception(res, tb))
+dask.async.OSError: [Errno 28] No space left on device
+
+Traceback
+---------
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/async.py", line 268, in execute_task
+    result = _execute_task(task, data)
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/async.py", line 249, in _execute_task
+    return func(*args2)
+  File "/usr/local/pyenv/versions/anaconda3-2.4.1/lib/python3.5/site-packages/dask/bytes/core.py", line 46, in write_block_to_file
+    f.write(ensure(data))
